@@ -35,7 +35,12 @@ function App() {
 
   const loadModel = async () => {
     next();
-    const model = await mobilenet.load();
+    const model = await mobilenet.load(
+      {
+        version: 1,
+        alpha: 1.0
+      }
+    );
     //const modelUrl = 'https://storage.googleapis.com/tfjs-models/savedmodel/mobilenet_v2_1.0_224/model.json';
     //const modelUrl = 'http://localhost:3000/model/model.json';
     //const model = await tf.loadModel(modelUrl);
